@@ -92,7 +92,7 @@ def _attempt_websocket_reconnect(client_id: str, max_retries: int = 3) -> websoc
     raise ConnectionError("Failed to reconnect to ComfyUI websocket")
 
 
-def wait_for_completion(prompt_id: str, client_id: str, timeout: int = 300):
+def wait_for_completion(prompt_id: str, client_id: str, timeout: int = 900):
     """Monitor websocket until the queued prompt completes or errors."""
     ws = _create_ws(client_id)
     start = time.time()
